@@ -8,6 +8,7 @@ This repository contains my Java learning progress. Below is a table of contents
 |---------------------|----------------------------------------------------------------------------|
 | [Basics](#basics)    | Variables, data types, conditionals, loops, modifiers, and operators |
 | [Arrays & Strings](#arrays--strings) | Arrays, strings, type conversion, and scope     |
+| [Classes, Objects & Methods](#classes-objects--methods) | Classes, objects, methods, constructors, and method overloading/overriding |
 
 ## Basics
 
@@ -167,4 +168,104 @@ Example:
 int number = 5;
 double convertedNumber = number; // Implicit conversion
 int castedNumber = (int) 9.99; // Explicit conversion
+```
+
+## Classes, Objects & Methods
+
+### Classes & Objects
+
+In Java, a **class** is a blueprint that defines the properties (attributes) and behaviors (methods) common to all objects of that type. An **object** is an instance of a class containing specific values for its attributes.
+
+- **Creating a Class**: Define attributes and methods that describe the object.
+- **Instantiating an Object**: Use the `new` keyword to create an object from a class.
+
+Example:
+```java
+class Car {
+    String color;
+    int year;
+
+    void displayInfo() {
+        System.out.println("Color: " + color + ", Year: " + year);
+    }
+}
+
+Car myCar = new Car();
+myCar.color = "Red";
+myCar.year = 2020;
+myCar.displayInfo(); // Outputs: Color: Red, Year: 2020
+```
+
+### Methods in Java
+
+A **method** is a function that belongs to a class, defining a behavior and potentially performing actions or returning values.
+
+- **Declaring a Method**: Defined with a return type, name, and optionally parameters in parentheses.
+- **Calling a Method**: Invoked using an object of the class or directly if it is static.
+
+Example:
+```java
+void greet() {
+    System.out.println("Hello!");
+}
+
+greet(); // Outputs: Hello!
+```
+
+### Method Overloading | Method Overriding
+
+- **Overloading**: Allows defining multiple methods with the same name in a class, as long as they have different parameter types or counts.
+
+Example:
+```java
+void display(int num) {
+    System.out.println("Number: " + num);
+}
+
+void display(String text) {
+    System.out.println("Text: " + text);
+}
+```
+
+- **Overriding**: Allows a subclass to provide a specific implementation of a method already defined in its superclass.
+
+### Parameter Passing in Java
+
+Java passes parameters to methods in two main ways:
+
+- **By Value**: Primitives are passed by value, so changes inside the method do not affect the original variable.
+- **By Reference**: Objects are passed by reference, allowing modifications to their attributes within the method.
+
+Example:
+```java
+void updateNumber(int num) {
+    num = num + 10;
+    System.out.println("Inside method: " + num);
+}
+
+int myNum = 5;
+updateNumber(myNum); // Outputs: Inside method: 15
+System.out.println("Outside method: " + myNum); // Outputs: Outside method: 5
+```
+
+### Constructors in Java
+
+A **constructor** is a special method called automatically when an object is created. It is used to initialize the object with specific values.
+
+- **Default Constructor**: Java provides a no-argument constructor if none is defined.
+- **Parameterized Constructor**: You can create a constructor with parameters to set initial values.
+
+Example:
+```java
+class Car {
+    String color;
+    int year;
+
+    Car(String color, int year) {
+        this.color = color;
+        this.year = year;
+    }
+}
+
+Car myCar = new Car("Blue", 2021);
 ```
