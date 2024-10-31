@@ -7,6 +7,7 @@ This repository contains my Java learning progress. Below is a table of contents
 | Topic               | Description                                                                |
 |---------------------|----------------------------------------------------------------------------|
 | [Basics](#basics)    | Variables, data types, conditionals, loops, modifiers, and operators |
+| [Arrays & Strings](#arrays--strings) | Arrays, strings, type conversion, and scope     |
 
 ## Basics
 
@@ -61,4 +62,109 @@ for (int i = 0; i < 5; i++) {
 int sum = 5 + 10;  // Arithmetic
 boolean isEqual = (sum == 15);  // Relational
 boolean result = (isEqual && true);  // Logical
+```
+
+## Arrays & Strings
+
+### Arrays
+
+Arrays are data structures that store multiple values of the same type. They allow for efficient data management and manipulation. Key characteristics include:
+
+- **Declaration**: Arrays are declared with a fixed size, which determines how many elements can be stored.
+
+- **Initialization**: Elements can be initialized at the time of declaration or later.
+
+- **Access**: Individual elements are accessed using their index, starting from 0.
+
+- **Types**: Java supports single-dimensional and multi-dimensional arrays, as well as arrays of objects.
+
+Arrays facilitate the storage and retrieval of data efficiently, making them essential for various algorithms.
+
+Example:
+```java
+int[] numbers = {1, 2, 3, 4, 5};
+System.out.println(numbers[2]); // Output: 3
+```
+
+### Strings
+
+Strings in Java are sequences of characters used to represent text. They are immutable, meaning once created, their values cannot be altered. Common functionalities include:
+
+- **Concatenation**: Combining strings using the `+` operator.
+  
+- **Length**: The `length()` method returns the number of characters in a string.
+
+- **Uppercase Conversion**: The `toUpperCase()` method converts all characters to uppercase.
+
+- **Substring Extraction**: The `substring(startIndex, endIndex)` method retrieves part of a string.
+
+- **Comparison**: Use `equals()` to compare two strings for equality.
+
+- **Splitting**: The `split(delimiter)` method divides a string into an array based on a specified delimiter.
+
+Strings are fundamental for handling textual data in Java applications.
+
+Example:
+```java
+String greeting = "Hello, " + "World!";
+System.out.println(greeting); // Output: Hello, World!
+```
+
+### ArrayList
+
+ArrayList is a part of the Java Collection Framework and provides a resizable array implementation. Unlike standard arrays, ArrayLists can grow dynamically as elements are added or removed. Key features include:
+
+- **Dynamic Resizing**: ArrayLists can adjust their size automatically, allowing for more flexible data storage.
+  
+- **Index-Based Access**: Elements can be accessed using their index, similar to arrays.
+
+- **Methods**: ArrayLists provide various methods such as `add()`, `remove()`, `get()`, and `size()` for managing elements.
+
+- **Type Safety**: With generics, ArrayLists can store specific types, ensuring type safety at compile time.
+
+ArrayLists are particularly useful when the number of elements is unknown or changes frequently.
+
+Example:
+```java
+ArrayList<String> fruits = new ArrayList<>();
+fruits.add("Apple");
+fruits.add("Banana");
+System.out.println("First fruit: " + fruits.get(0)); // Output: First fruit: Apple
+```
+
+### Scope of Variables
+
+The scope of a variable defines the region within a program where the variable can be accessed or referenced. Java has several scopes, including:
+
+- **Local Scope**: Variables defined within a method or block are local to that method or block. They cannot be accessed outside of it.
+  
+- **Instance Scope**: Instance variables are associated with an object and can be accessed by any method in the class. They are defined within a class but outside any method.
+
+- **Class Scope**: Class variables (static variables) are shared among all instances of a class. They can be accessed using the class name and are defined with the `static` keyword.
+
+Understanding variable scope is crucial for managing memory and ensuring that variables are used effectively within a program.
+
+Example:
+```java
+void method() {
+    int localVariable = 10; // Local scope
+    System.out.println(localVariable);
+}
+```
+
+### Type Conversion
+
+Type conversion in Java refers to converting a variable from one data type to another. There are two main types of conversions:
+
+- **Implicit Conversion**: Also known as automatic type conversion, this occurs when the compiler automatically converts a smaller data type to a larger data type without explicit instructions. For example, converting an `int` to a `double`.
+
+- **Explicit Conversion**: Also known as casting, this requires a specific instruction to convert a larger data type to a smaller data type. This is done by placing the desired data type in parentheses before the variable. For example, converting a `double` to an `int`.
+
+Type conversion is important for performing operations on different data types and ensuring data integrity.
+
+Example:
+```java
+int number = 5;
+double convertedNumber = number; // Implicit conversion
+int castedNumber = (int) 9.99; // Explicit conversion
 ```
